@@ -25,13 +25,38 @@ form = """
         </style>
     </head>
     <body>
-      <!-- create your form here -->
+        
+        <form action="" method="post">
+        
+            <label for="rot">Rotate by:</label>
+        
+            <input type="text" id="rot" name="rot" placeholder="0" />
+        
+            <textarea name="text"></textarea>
+        
+            <input type="submit" value="Submit Query" />
+        
+        </form>
+
     </body>
-</html>
-"""
+</html>"""
+
 
 @app.route("/")
 def index():
-    return "Hello World"
+    return form
 
 app.run()
+
+
+"""The form uses the POST method.
+There are two inputs: a regular input with type="text" and a textarea.
+Set name="rot" on the input element and name="text" on the textarea.
+Has a label on the input element that looks something like the one in the screenshot above.
+The input element has the default value of 0.
+Has a submit button
+1) regular input. first input (name="rot") will show "Rotate by:" 
+            followed by a text input for numbers where the default is 0
+            2) textarea input. (name="text")will show a large text area for input
+            3) submit query button will be below text area
+            4) index function will return the form variable"""
